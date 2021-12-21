@@ -1,0 +1,129 @@
+body{
+    background-color: #EEE7E3;
+    font-family: 'Noto Sans KR', 'sans-serif';
+}
+div:not(.introduction){
+    background-color:blanchedalmond;
+    width:300px;
+    border:15px solid green;
+    padding:50px;
+    margin:20px;
+    border-radius:2em;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+.value-menu{
+    font-family: 'Montserrat', 'sans-serif';
+    font-size:35px;
+    margin:30px 100px;
+}
+.value-section{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+    margin:100px 150px;
+    margin-top:20px;
+}
+.frame{
+    margin: 30px 150px;
+    display: flex;
+    flex-direction: column;
+}
+/*navigator*/
+.navigator{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+li{
+    display: inline;
+    align-self: center;
+    margin: 0;
+    margin-left: 15px;
+}
+ul{
+    margin: 0;
+
+}
+.site-name{
+    margin: 0;
+    font-family: 'Montserrat';
+    font-size: 24px;
+    color:#C2B4AB;
+}
+.nav-menu{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size:16px;
+
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+a:hover{
+    color:white;
+    transition:0.3s;
+
+}
+/*introduction*/
+.introduction{
+    display:flex;
+    flex-direction: column;
+    margin-top:100px;
+}
+.korean-comment{
+    font-family: 'Noto Sans KR','sans-serif';
+    font-weight: 700;
+    font-size:50px;
+}
+.sample{
+    background-color:pink;
+    -webkit-text-stroke:pink;
+}
+.sample:hover{
+    background-color:transparent;
+    color:white;
+    -webkit-text-stroke:1px black;
+    transition:none;
+}
+.highlight{
+    color:white;
+    -webkit-text-stroke:1px black;
+}
+.highlight:hover{
+    background-color: pink;
+    transition:none;
+}
+.type0:hover{
+    background-color: rgb(178, 34, 147);
+}
+.type1:hover{
+    background-color: yellowgreen;
+}
+.type2:hover{
+    background-color: skyblue;
+}
+.type3:hover{
+    background-color:orange;
+}
+.english-comment{
+    font-family: 'Noto sans KR', 'sans-serif';
+    font-weight:100;
+    font-size:15px;
+    font-style:italic;
+    letter-spacing:-0.3px;
+}
+.recent-menu{
+    margin: 0;
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 15px;
+    font-weight: 700;
+    color:#C2B4AB;
+
+    text-align:right;
+    margin-top:100px;
+}
