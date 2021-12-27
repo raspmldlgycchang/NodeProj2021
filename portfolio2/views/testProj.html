@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes jelly{
+            from {transform:scale(1,1);}
+            30%{
+                transform:scale(1.25, 0.75);
+            }
+            40%{
+                transform:scale(0.75, 1.25);
+            }
+            50%{
+                transform:scale(1.15, 0.85);
+            }
+            65%{
+                transform:scale(0.95, 1.05);
+            }
+            75%{
+                transform:scale(1.05, 0.95);
+            }
+            to{
+                transform:scale(1, 1);
+            }
+        }
+        #testbox span{
+            display:inline-block;
+            vertical-align: middle;
+            cursor:pointer;
+        }
+        
+        #testbox input{
+            position:absolute;
+            opacity: 0;
+            cursor:pointer;
+            height:0;
+            width:0;
+        }
+        #testbox .icon{
+            position:relative;
+            width:17px;
+            height:17px;
+            border:1px solid #c8ccd4;
+            border-radius: 3px;
+            transition:background 0.1s ease;
+        }
+        #testbox .icon::after{
+            content:'';
+            position:absolute;
+            top:1px;
+            left:5px;
+            width:5px;
+            height:11px;
+            border-right:2px solid #fff;
+            border-bottom:2px solid #fff;
+            transform: rotate(45deg) scale(0);
+            transition:all .3s ease;
+            transition-delay: 0.15s;
+            opacity: 0;
+        }
+        #testbox .text{
+            margin-left: 5px;
+        }
+        #testbox input:checked ~ .icon{
+            border-color:transparent;
+            background: #ff1616;
+            animation:jelly 0.6s ease;
+        }
+        #testbox input:checked ~ .icon::after{
+            opacity: 1;
+            transform: rotate(45deg) scale(1);
+        }
+        label#testbox span[class="icon"]{
+            position:relative;
+            width:17px;
+            height:17px;
+            border:1px solid #c8ccd4;
+            border-radius:3px;
+            transition:background 0.1s ease;
+        }
+        label#testbox span[class="icon"]::after{
+            content:'';
+            position:absolute;
+            top:1px;
+            left:5px;
+            width:5px;
+            height:11px;
+            border-right:2px solid #fff;
+            border-bottom:2px solid #fff;
+            transform: rotate(45deg) scale(0);
+            transition:all .3s ease;
+            transition-delay: 0.15s;
+            opacity: 0;
+        }
+        label#testbox{
+            position:relative;
+            padding-left: 35px;
+            background:url('../public/img/stars.png') -30px 0 / 60px no-repeat;
+            line-height:30px;
+        }
+        label#testbox::after{
+            content:'';
+            position:absolute;
+            z-index:1;
+            top:0;left:0;
+            width:0;
+            height:100%;
+            background:url('../public/img/stars.png') 0 0 / 60px no-repeat;
+            transition:all .5s;
+        }
+        label#testbox:hover::after{
+            width:30px;
+        }
+        .ballon{
+            position:relative;
+            margin:10px;
+            width:400px;
+            height:30px;
+            background:peru;
+            border-radius:10px;
+            font-size:12px;
+
+        }
+        .ballon::after{
+            border-top:0px solid transparent;
+            border-left:10px solid transparent;
+            border-right:10px solid transparent;
+            border-bottom:15px solid peru;
+            content:"";
+            position:absolute;
+            top:-15px;
+            left:20px;
+        }
+        label#testbox:hover .ballon{
+            top:-10px;
+            left:-20px;
+
+        }
+    </style>
+</head>
+<body>
+    <label id="testbox"><h2>JAVA</h2><p class="ballon">해당카테고리를 보려면 해당카테고리 내 아무 글자에 마우스오버해주세요</p>
+        <input type="checkbox" id="chkbox1"><span class="type1">★</span>
+        <span class="icon"></span>
+        <span class="text"><a>주제별 포스팅 소개</a></span>
+
+    </label>
+</body>
+</html>
