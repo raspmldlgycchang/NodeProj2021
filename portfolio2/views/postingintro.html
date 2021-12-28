@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고보니연구소장GYCCHANG의 PORTFOLIO</title>
+    <link rel="https://fonts.googleapis.co,/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@200;0,400;0,500;0,600;0,800;0,900;1,200;1,400;1,500;1,600;1,800;1,900&
+    display=swap" rel="stylesheet">
+    <style>
+        @keyframes jelly{
+            from {transform:scale(1,1);}
+            30%{
+                transform:scale(1.25, 0.75);
+            }
+            40%{
+                transform:scale(0.75, 1.25);
+            }
+            50%{
+                transform:scale(1.15, 0.85);
+            }
+            65%{
+                transform:scale(0.95, 1.05);
+            }
+            75%{
+                transform:scale(1.05, 0.95);
+            }
+            to{
+                transform:scale(1, 1);
+            }
+        }
+        input[id="menubar"]{
+            display: none;
+        }
+        input[id="menubar"]+label[class="menulabel"]{
+            display:block;
+            margin:30px;
+            width:60px;
+            height:50px;
+            position:relative;
+            cursor:pointer;
+        }
+        input[id="menubar"]+label[class="menulabel"] > span{
+            display:block;
+            position:absolute;
+            width:100%;
+            height:5px;
+            border-radius: 30px;
+            background:#000;
+            transition:all .35s;
+        }
+        input[id="menubar"]+label[class="menulabel"] > span:nth-child(1){
+            top:0;
+        }
+        input[id="menubar"]+label[class="menulabel"] > span:nth-child(2){
+            top:50%;
+            transform:translateY(-50%);
+        }
+        input[id="menubar"]+label[class="menulabel"] > span:nth-child(3){
+            bottom:0;
+        }
+        input[id="menubar"]:checked +label[class="menulabel"]{
+            z-index: 7;
+        }
+        input[id="menubar"]:checked +label[class="menulabel"] > span{
+            background:#fff;
+        }
+        input[id="menubar"]:checked+label[class="menulabel"] > span:nth-child(1){
+            top:50%;
+            transform:translateY(-50%) rotate(45deg); 
+        }
+        input[id="menubar"]:checked + label[class="menulabel"] > span:nth-child(2){
+            opacity:0;
+        }
+        input[id="menubar"]:checked + label[class="menulabel"] > span:nth-child(3){
+            bottom: 50%;
+            transform:translateY(50%) rotate(-45deg);
+        }
+        div[class="sidebar"]{
+            width:300px;height:100%;background:#222;position:fixed;top:0;left:-300px;z-index:6;transition:all .35s;overflow: scroll;
+        }
+        .sidebar::-webkit-scrollbar{
+            width:10px;
+        }
+        .sidebar::-webkit-scrollbar-thumb{
+            background-color:#2f3542;
+            border-radius: 10px;
+        }
+        .sidebar::-webkit-scrollbar-track{
+            background-color: grey;
+            border-radius: 10px;
+            box-shadow:inset 0px 0px 5px white;
+        }
+        input[id="menubar"]:checked +label[class="menulabel"]+div{
+            left:0
+        }
+        body{
+            background-color: #FFD700;
+            font-family: 'Noto Sans KR', 'sans-serif';
+        }
+        .circle{
+            box-sizing: border-box;
+            background-color: #2478FF;;
+            margin:0 auto;
+            width:200px;
+            height:200px;
+            position:relative;
+            top:100px;
+            border:15px solid transparent;
+            border-radius: 50%;
+        }
+        .wrapper{
+            margin:0 auto;
+            padding-right:10px;
+            padding-left:10px;
+            max-width:1170px;
+            visibility: none;
+        }
+        .mb-1{
+            margin-bottom:1rem !important;
+            background-color: aliceblue;
+
+        }
+        .float{
+            position: relative;
+            background-color: white;
+
+        }
+        .float:hover{
+            animation-name:blinking;
+            animation-duration: 1.5s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+        }
+        .type1{
+            position:relative;
+            z-index: 5;
+            top:-10px;
+            width:auto;
+            height:auto;
+        }
+        .type2{
+            content: none;
+            position: relative;
+            z-index: 3;
+            top:15px;
+            width:auto;
+            height:100px;
+        }
+        .type3{
+            position: relative;
+            z-index: 2;
+            height:auto;
+        }
+        .clear{
+            clear: both;
+        }
+        li.traffic{
+            float: left;
+            width:5px;
+            height:5px;
+            border:5px solid transparent;
+            border-radius: 50%;
+            display:inline;
+            align-self: center;
+            margin-left:25px;
+            margin-right:15px;
+            margin-top:5px;
+            margin-bottom: 5px;
+            transition:all 0.3s ease;
+        }
+        .red{
+            margin-left:0;
+            background-color: red;
+        }
+        .yellow{
+            background-color:yellow;
+        }
+        .green{
+            background-color: rgb(58, 216, 71);
+        }
+        .korean-comment{
+            text-align: center;
+            font-size:40px;
+            font-family: 'Noto Sans KR', 'sans-serif';
+        }
+        .english-comment{
+            margin:0;
+            text-align: center;
+            font-family: 'Noto Sans KR', 'sans-serif';
+            font-weight:100;
+            font-size:15px;
+            font-style:italic;
+            letter-spacing: -0.3px;
+        }
+        .rect{
+            padding:0;
+            margin:0 auto;
+            position: relative;
+            top:-100px;
+            z-index:6;
+            width:0;height:0;
+            left:10px;
+            border-right:80px solid transparent;
+            border-top: 50px solid transparent;
+            border-left: 80px solid transparent;
+            border-bottom:100px solid tomato;
+        }
+        h1:not(.korean-comment){
+            padding-top:50px;
+            margin-left:15px;
+            text-align: left;
+            font-family: 'Noto Sans KR', 'sans-serif';
+            font-weight:100;
+            font-size:30px;
+            font-style:italic;
+            letter-spacing: -0.3px;
+            color:whitesmoke;
+        }
+        input[type="checkbox"]{
+            display: none;
+            position:absolute;
+            opacity:0;
+            cursor:pointer;
+            height:0;
+            width:0;
+        }
+        input[type="checkbox"] span{
+            display:inline-block;
+            vertical-align: middle;
+            cursor:pointer;
+        }
+        input[id="title"]+label{
+            display:block;
+            margin:30px;
+            width:60px;
+            height:50px;
+            position:relative;
+            cursor:pointer;
+        }
+        input[id="title"]+label>h1>a{
+            padding-top:50px;
+            margin-left:15px;
+            text-align: left;
+            font-family: 'Noto Sans KR', 'sans-serif';
+            font-weight:100;
+            font-size:30px;
+            font-style:italic;
+            letter-spacing: -0.3px;
+            color:whitesmoke;
+        }
+        
+        input[id="title"] + label{
+            display: inline-block;
+            padding:20px;
+            margin-top:70px;
+            background:#ccc;
+            color:#999;
+            font-size:14px;
+            cursor:pointer;
+            width:17px;
+            height:17px;
+            border:1px solid #c8ccd4;
+            border-radius:3px;
+            transition:background 0.1s ease;
+        }
+        input[id="title"]:checked+label[class="titlelabel"]{
+            position:relative;
+            padding-left: 35px;
+            background:url('../public/img/blog1title.png') 0 0 / 74px no-repeat;
+            line-height:30px;
+            color:#000;
+        }
+        input[type="checkbox"]:checked+label span.icon{
+            position: relative;
+            width:17px;
+            height:17px;
+            border:1px solid #c2ccd4;
+            border-radius:3px;
+            transition: background 0.1s ease;
+        }
+        input[type="checkbox"]+label span.icon::after{
+            content:'';
+            position:absolute;
+            top:1px;
+            left:5px;
+            width:5px;
+            height:11px;
+            border-right:2px solid #fff;
+            border-bottom:2px solid #fff;
+            transform:rotate(45deg) scale(0);
+            transition:all 0.3s ease;
+            transition: delay 0.15s;
+            opacity:0;
+        }
+        input[type="checkbox"]:checked+label span.text{
+            margin-left:5px;
+        }
+        input[type="checkbox"]:checked+label span.icon{
+            border-color: transparent;
+            background:#ff1616;
+            animation:jelly 0.6s ease;
+        }
+        input[type="checkbox"]:checked+label span.icon::after{
+            opacity: 1;
+            transform:rotate(45deg) scale(1);
+        }
+        h2{
+            margin-left:15px;
+            font-size:15px;
+            left:15px;
+        }
+        a{
+            text-decoration: none;
+            color:#5f5f5f;
+        }
+        input[id="category"]+label>h3+em+span.arrowicon{
+            position:relative;
+            width:17px;
+            height:17px;
+            border:1px solid #fff;
+            border-radius: 3px;
+            transition:background 0.1s ease;
+        }
+        input[id="category"]+label>h3+em+span.arrowicon::after{
+            content:'';
+            position:absolute;
+            top:1px;
+            left:5px;
+            width:5px;
+            height:11px;
+            border-right:2px solid #fff;
+            border-bottom:2px solid #fff;
+            transform:rotate(45deg) scale(0);
+            transition:all 0.3s ease;
+            transition:delay 0.15s;
+            opacity: 0;
+        }
+        input[id="category"]:checked+label>h3+em+span.arrowicon{
+            border-color:transparent;
+            animation:jelly 0.6s ease;
+        }
+        input[id="category"]:checked+label>h3+em+span.arrowicon::after{
+            opacity: 1;
+            transform:rotate(45deg) scale(1);
+        }
+        #testbox span{
+            display: inline-block;
+            vertical-align: middle;
+            cursor:pointer;
+        }
+        #testbox input{
+            position:absolute;
+            opacity: 0;
+            cursor:pointer;
+            height:0;
+            width:0;
+        }
+        #testbox input+h2{
+            position: relative;
+
+        }
+        #testbox input+h2+.icon{
+            position:absolute;
+            top:40%;
+            right:100px;
+            width:30px;
+            height:30px;
+            display: inline-block;
+            background:url('') 0 0 no-repeat;
+        }
+        #testbox input:checked+h2+.icon{
+            background-position: -38px 0;
+        }
+        #testbox .icon{
+            position:relative;
+            width:17px;
+            height:17px;
+            border:1px solid #c8ccd4;
+            border-radius: 3px;
+            transition:background 0.1s ease;
+        }
+        #testbox input+h2+span ~ .icon::after{
+            content:'';
+            position:absolute;
+            top:1px;
+            left:5px;
+            width:5px;
+            height:11px;
+            border-right:2px solid #fff;
+            border-bottom:2px solid #fff;
+            transform: rotate(45deg) scale(0);
+            transition:all .3s ease;
+            transition-delay: 0.15s;
+            opacity: 0;
+        }
+        #testbox input+h2+span+.icon+.text{
+            margin-left: 5px;
+        }
+        #testbox input+h2+label>.icon+.text{
+            margin-left:5px;
+        }
+        #testbox input:checked+h2{
+            color: #c2f4db;
+        }
+        #textbox input:checked+h2+label>.icon+.text{
+            color:#c2f4db;
+        }
+        #testbox input:checked+h2+label>.icon{
+            border-color: transparent;
+            background:#ff1616;
+            animation:jelly 0.6s ease;
+        }
+        #testbox input:checked+h2+label>.icon::after{
+            opacity:1;
+            transform: rotate(45deg) scale(1);
+        }
+        #testbox input:checked+h2+label>span:nth-child(2)> a:hover{
+            color:#f4c2f0;
+        }
+        #testbox input:checked+h2+label>span.icon{
+            border-color: transparent;
+            background:#ff1616;
+            animation:jelly 0.6s ease;
+        }
+
+        #testbox:hover::after{
+            width:30px;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <input type="checkbox" id="menubar">
+    <label for="menubar" class="menulabel">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <div class="sidebar">
+        <input type="checkbox" id="title">
+        <label for="title" class="titlelabel">
+            <h1><a href="#" title="클릭해서 이동">BLOG</a></h1><span class="icon"></span>
+        </label>
+
+        <input type="checkbox" id="category">
+        <label for="category" class="categorylabel">
+            <h3><a href="#">JAVA</a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>C(23)</h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>2차원구조체포인터배열구조(3)</a></span>
+            </label>
+        </label>
+    </div>
+</body>
