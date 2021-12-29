@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고보니연구소장 GYCCHANG의 블로그</title>
+    <style>
+        @keyframes blinking{
+            0%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0.5;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+        .introductionbox{
+            width:100%;
+            height:400px;
+            overflow:hidden;
+            margin:0 auto;
+            position:relative;
+        }
+        video{
+            width:100%;
+        }
+        .eventAlarm{
+            position:absolute;
+            background-color: azure;
+            top:50%;
+            width:100%;
+            animation: blinking 2s linear infinite;
+            text-align: center;
+        }
+        .bottomeventAlarm{
+            position:absolute;
+            top:430px;
+            left:90%;
+            color:#5f5f5f;
+            background-color: #fff;
+            animation:blinking 2s linear infinite;
+            font-size:12px;
+            text-align:center;
+        }
+        .list{
+            max-width:1200px;
+            width:100%;
+            margin:0 auto;
+        }
+        ul{
+            font-size:0;
+        }
+        ul > li{
+            display:inline-block;
+            vertical-align:top;
+            width:33.3%;
+        }
+        ul > li >a{
+            display: block;
+            width:auto;
+            text-decoration: none;
+            margin:5px;
+        }
+        ul > li > a .screen{
+            position: relative;
+            overflow: hidden;
+        }
+        ul > li > a .screen::after{
+            content:'';
+            display: block;
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100%;
+            background:rgba(0,0,0,.5);
+            z-index: 1;
+            opacity: 0;
+            transition:all .35s;
+        }
+        ul > li > a:hover .screen::after{
+            opacity:1;
+        }
+        ul > li > a .screen .top{
+            position: absolute;
+            bottom:150%;
+            left:30px;
+            z-index:2;
+            color:#fff;
+            font-size:15px;
+            font-weight: 900;
+            transition: all .35s;
+        }
+        ul > li > a .screen .bottom{
+            position: absolute;
+            bottom:150%;
+            left:30px;
+            z-index:2;
+            color:#fff;
+            font-size:13px;
+            transition: all .35s;
+
+        }
+        ul>li>a.screen img{
+            width:100%;
+        }
+        ul > li > a h3{
+            font-size:14px;
+            text-align:center;
+            padding:20px;
+            margin:15px;
+            color:#666;
+        }
+        ul > li > a:hover .top{
+            bottom:52%;
+        }
+        ul > li > a:hover .bottom{
+            top:52%;
+        }
+        .type1{
+            position: absolute;
+            bottom:150%;
+            left:30px;
+            z-index:2;
+            color:#fff;
+            font-size:15px;
+            font-weight: 900;
+            transition: all .35s;
+        }
+    </style>
+</head>
+<body>
+    <div class="introductionbox">
+        <video class="blogshort" src="../public/video/blogshort.mp4" controls loop autoplay width="1170" height="400"></video>
+        <!--<video autoplay loop>
+            <source src="blogshort.mp4" type="video/mp4">
+            <strong>Your browser does not support the video tag.</strong>
+        </video>-->
+        <!--<p class="eventAlarm">눌러주세요</p>-->
+    </div>
+    <p class="bottomeventAlarm">글자에<br/> 마우스오버해주세요</p>
+    <div class="list">
+        <ul>
+            <li>
+                <a href="">
+                    <div class="screen">
+                        <div class="top">2차원구조체포인터배열구현</div>
+                        <div class="bottom">C,CPP,Windows Desktop</div>
+                        <img src="../public/img/basicImgtemp.png">
+                    </div>
+                    <div>
+                        <h3>자타공인C언어마스터자 C/CPP포인터최강자</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="screen">
+                        <div class="top type1">블로그+MyThread카페+본인운영카페+유튜브</div>
+                        <div class="bottom">게시물수 520개(21.12.23기준)</div>
+                        <img src="../public/img/basicImgtemp.png">
+                    </div>
+                    <div>
+                        <h3>네이버블로그 게시물평균사용시간 전체서비스 상위그룹 이상</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="screen">
+                        <div class="top">네이버구글블로그+본인운영카페</div>
+                        <div class="bottom">조회수 회</div>
+                        <img src="../public/img/basicImgtemp.png">
+                    </div>
+                    <div>
+                        <h3>C/CPP언어 게시글 99개 조회수 </h3>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">
+                    <div class="screen">
+                        <div class="top">Amazon 클라우드 엔진니어 '김익수' 멘토님 평가</div>
+                        <div class="bottom">Amazon 기업관련업무과제수행평가 최우수자</div>
+                        <img src="../public/img/basicImgtemp.png">
+                    </div>
+                    <div>
+                        <h3>2021대구청년글로벌기업취업콘서트 전체섹션 참가  Amazon기업멘토 과제 최우수평가자</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="screen">
+                        <div class="top">1일1포스팅 since 2020.05.08</div>
+                        <div class="bottom">게시물수 520개(21.12.23기준)</div>
+                        <img src="../public/img/basicImgtemp.png">
+                    </div>
+                    <div>
+                        <h3>1일1포스팅 since 20.05.08<br/> MyThread카페 공부이력 since 20.07.14</h3>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="screen">
+                        <div class="top">MyThread카페 게시물 40개 댓글 65개</div>
+                        <div class="bottom">조회수 1480회(21.12.23기준)</div>
+                        <img src="../public/img/basicImgtemp.png">
+                    </div>
+                    <div>
+                        <h3>MVP 김성엽님께서 운영중이신<br/> MyThread카페 열심회원 8개월차 GYCCHANG</h3>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
