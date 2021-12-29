@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알고보니연구소장GYCCHANG의 PORTFOLIO</title>
+    <link rel="https://fonts.googleapis.co,/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@200;0,400;0,500;0,600;0,800;0,900;1,200;1,400;1,500;1,600;1,800;1,900&
+    display=swap" rel="stylesheet">
+    <style>
+        @keyframes jelly{
+            from {transform:scale(1,1);}
+            30%{
+                transform:scale(1.25, 0.75);
+            }
+            40%{
+                transform:scale(0.75, 1.25);
+            }
+            50%{
+                transform:scale(1.15, 0.85);
+            }
+            65%{
+                transform:scale(0.95, 1.05);
+            }
+            75%{
+                transform:scale(1.05, 0.95);
+            }
+            to{
+                transform:scale(1, 1);
+            }
+        }
+        input[id="menubar"]{
+            display: none;
+        }
+        input[id="menubar"]+label[class="menulabel"]{
+            display:block;
+            margin:30px;
+            width:60px;
+            height:50px;
+            position:relative;
+            cursor:pointer;
+        }
+        input[id="menubar"]+label[class="menulabel"] > span{
+            display:block;
+            position:absolute;
+            width:100%;
+            height:5px;
+            border-radius: 30px;
+            background:#000;
+            transition:all .35s;
+        }
+        input[id="menubar"]+label[class="menulabel"] > span:nth-child(1){
+            top:0;
+        }
+        input[id="menubar"]+label[class="menulabel"] > span:nth-child(2){
+            top:50%;
+            transform:translateY(-50%);
+        }
+        input[id="menubar"]+label[class="menulabel"] > span:nth-child(3){
+            bottom:0;
+        }
+        input[id="menubar"]:checked +label[class="menulabel"]{
+            z-index: 7;
+        }
+        input[id="menubar"]:checked +label[class="menulabel"] > span{
+            background:#fff;
+        }
+        input[id="menubar"]:checked+label[class="menulabel"] > span:nth-child(1){
+            top:50%;
+            transform:translateY(-50%) rotate(45deg); 
+        }
+        input[id="menubar"]:checked + label[class="menulabel"] > span:nth-child(2){
+            opacity:0;
+        }
+        input[id="menubar"]:checked + label[class="menulabel"] > span:nth-child(3){
+            bottom: 50%;
+            transform:translateY(50%) rotate(-45deg);
+        }
+        div[class="sidebar"]{
+            width:300px;height:100%;background:#222;position:fixed;top:0;left:-300px;z-index:6;transition:all .35s;overflow: scroll;
+        }
+        .sidebar::-webkit-scrollbar{
+            width:10px;
+        }
+        .sidebar::-webkit-scrollbar-thumb{
+            background-color:#2f3542;
+            border-radius: 10px;
+        }
+        .sidebar::-webkit-scrollbar-track{
+            background-color: grey;
+            border-radius: 10px;
+            box-shadow:inset 0px 0px 5px white;
+        }
+        input[id="menubar"]:checked +label[class="menulabel"]+div{
+            left:0
+        }
+        body{
+            background-color: #FFD700;
+            font-family: 'Noto Sans KR', 'sans-serif';
+        }
+        .circle{
+            box-sizing: border-box;
+            background-color: #2478FF;;
+            margin:0 auto;
+            width:200px;
+            height:200px;
+            position:relative;
+            top:100px;
+            border:15px solid transparent;
+            border-radius: 50%;
+        }
+        .wrapper{
+            margin:0 auto;
+            padding-right:10px;
+            padding-left:10px;
+            max-width:1170px;
+            visibility: none;
+        }
+        .mb-1{
+            margin-bottom:1rem !important;
+            background-color: aliceblue;
+
+        }
+        .float{
+            position: relative;
+            background-color: white;
+
+        }
+        .float:hover{
+            animation-name:blinking;
+            animation-duration: 1.5s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+        }
+        .type1{
+            position:relative;
+            z-index: 5;
+            top:10px;
+            width:auto;
+            height:auto;
+        }
+        .type2{
+            content: none;
+            position: relative;
+            z-index: 3;
+            top:10px;
+            width:auto;
+            height:100px;
+        }
+        .type3{
+            position: relative;
+            z-index: 2;
+            height:auto;
+        }
+        .clear{
+            clear: both;
+        }
+        li.traffic{
+            float: left;
+            width:5px;
+            height:5px;
+            border:5px solid transparent;
+            border-radius: 50%;
+            display:inline;
+            align-self: center;
+            margin-left:25px;
+            margin-right:15px;
+            margin-top:5px;
+            margin-bottom: 5px;
+            transition:all 0.3s ease;
+        }
+        .red{
+            margin-left:0;
+            background-color: red;
+        }
+        .yellow{
+            background-color:yellow;
+        }
+        .green{
+            background-color: rgb(58, 216, 71);
+        }
+        .korean-comment{
+            text-align: center;
+            font-size:40px;
+            font-family: 'Noto Sans KR', 'sans-serif';
+        }
+        .english-comment{
+            margin:0;
+            text-align: center;
+            font-family: 'Noto Sans KR', 'sans-serif';
+            font-weight:100;
+            font-size:15px;
+            font-style:italic;
+            letter-spacing: -0.3px;
+        }
+        .rect{
+            padding:0;
+            margin:0 auto;
+            position: relative;
+            top:-100px;
+            z-index:6;
+            width:0;height:0;
+            left:10px;
+            border-right:80px solid transparent;
+            border-top: 50px solid transparent;
+            border-left: 80px solid transparent;
+            border-bottom:100px solid tomato;
+        }
+        h1:not(.korean-comment){
+            padding-top:50px;
+            margin-left:15px;
+            text-align: left;
+            font-family: 'Noto Sans KR', 'sans-serif';
+            font-weight:100;
+            font-size:30px;
+            font-style:italic;
+            letter-spacing: -0.3px;
+            color:whitesmoke;
+        }
+        input[type="checkbox"]{
+            display: none;
+            position:absolute;
+            opacity:0;
+            cursor:pointer;
+            height:0;
+            width:0;
+        }
+        input[type="checkbox"] span{
+            display:inline-block;
+            vertical-align: middle;
+            cursor:pointer;
+        }
+        input[id*="title"]+label{
+            display:block;
+            margin:30px;
+            width:60px;
+            height:50px;
+            position:relative;
+            cursor:pointer;
+        }
+        input[id*="title"]+label>h1>a{
+            padding-top:50px;
+            margin-left:15px;
+            text-align: left;
+            font-family: 'Noto Sans KR', 'sans-serif';
+            font-weight:100;
+            font-size:30px;
+            font-style:italic;
+            letter-spacing: -0.3px;
+            color:whitesmoke;
+        }
+        
+        input[id*="title"] + label{
+            display: inline-block;
+            padding:20px;
+            margin-top:70px;
+            background:#ccc;
+            color:#999;
+            font-size:14px;
+            cursor:pointer;
+            width:17px;
+            height:17px;
+            border:1px solid #c8ccd4;
+            border-radius:3px;
+            transition:background 0.1s ease;
+        }
+        input[id="title"]:checked+label[class="titlelabel"]{
+            position:relative;
+            padding-left: 35px;
+            background:url('../public/img/blog1title.png') 0 0 / 74px no-repeat;
+            line-height:30px;
+            color:#000;
+        }
+        input[id="title2"]:checked+label[class="titlelabel"]{
+            position:relative;
+            padding-left: 35px;
+            background:url('../public/img/cafe1title.png') 0 0 / 74px no-repeat;
+            line-height:30px;
+            color:#000;
+        }
+        input[id="title3"]:checked+label[class="titlelabel"]{
+            position:relative;
+            padding-left: 35px;
+            background:url('../public/img/cody.jpg') 0 0 / 74px no-repeat;
+            line-height:30px;
+            color:#000;
+        }
+        input[id="title4"]:checked+label[class="titlelabel"]{
+            position:relative;
+            padding-left: 35px;
+            background:url('../public/img/youtube1title.png') 0 0 / 74px no-repeat;
+            line-height:30px;
+            color:#000;
+        }
+        input[type="checkbox"]:checked+label span.icon{
+            position: relative;
+            width:17px;
+            height:17px;
+            border:1px solid #c2ccd4;
+            border-radius:3px;
+            transition: background 0.1s ease;
+        }
+        input[type="checkbox"]+label span.icon::after{
+            content:'';
+            position:absolute;
+            top:1px;
+            left:5px;
+            width:5px;
+            height:11px;
+            border-right:2px solid #fff;
+            border-bottom:2px solid #fff;
+            transform:rotate(45deg) scale(0);
+            transition:all 0.3s ease;
+            transition: delay 0.15s;
+            opacity:0;
+        }
+        input[type="checkbox"]:checked+label span.text{
+            margin-left:5px;
+        }
+        input[type="checkbox"]:checked+label span.icon{
+            border-color: transparent;
+            background:#ff1616;
+            animation:jelly 0.6s ease;
+        }
+        input[type="checkbox"]:checked+label span.icon::after{
+            opacity: 1;
+            transform:rotate(45deg) scale(1);
+        }
+        h2{
+            margin-left:15px;
+            font-size:15px;
+            left:15px;
+        }
+        a{
+            text-decoration: none;
+            color:#5f5f5f;
+        }
+        h3{
+            color:#595959;
+        }
+        input[id*="category"]+label>h3+em+span.arrowicon{
+            position:relative;
+            width:17px;
+            height:17px;
+            border:1px solid transparent;
+            border-radius: 3px;
+            transition:background 0.1s ease;
+        }
+        input[id*="category"]+label>h3+em+span.arrowicon::after{
+            content:'';
+            position:absolute;
+            top:-40px;
+            left:70px;
+            width:5px;
+            height:11px;
+            border-right:2px solid #fff;
+            border-bottom:2px solid #fff;
+            transform:rotate(45deg) scale(0);
+            transition:all 0.3s ease;
+            transition:delay 0.15s;
+            opacity: 0;
+        }
+        input[id*="category"]:checked+label>h3+em+span.arrowicon{
+            border-color:transparent;
+            animation:jelly 0.6s ease;
+        }
+        input[id*="category"]:checked+label>h3>a>span{
+            display: none;
+        }
+        input[id*="category"]:checked+label>h3+em+span.arrowicon::after{
+            opacity: 1;
+            transform:rotate(45deg) scale(1);
+        }
+        #testbox span{
+            display: inline-block;
+            vertical-align: middle;
+            cursor:pointer;
+        }
+        #testbox input{
+            position:absolute;
+            opacity: 0;
+            cursor:pointer;
+            height:0;
+            width:0;
+        }
+        #testbox input+h2{
+            position: relative;
+
+        }
+        #testbox input+h2+.icon{
+            position:absolute;
+            top:40%;
+            right:100px;
+            width:30px;
+            height:30px;
+            display: inline-block;
+            background:url('') 0 0 no-repeat;
+        }
+        #testbox input:checked+h2+.icon{
+            background-position: -38px 0;
+        }
+        #testbox .icon{
+            position:relative;
+            width:17px;
+            height:17px;
+            border:1px solid #c8ccd4;
+            border-radius: 3px;
+            transition:background 0.1s ease;
+        }
+        #testbox input+h2+span ~.icon::after{
+            content:'';
+            position:absolute;
+            top:1px;
+            left:5px;
+            width:5px;
+            height:11px;
+            border-right:2px solid #fff;
+            border-bottom:2px solid #fff;
+            transform: rotate(45deg) scale(0);
+            transition:all .3s ease;
+            transition-delay: 0.15s;
+            opacity: 0;
+        }
+        #testbox input+h2+span+.icon+.text{
+            margin-left: 5px;
+        }
+        #testbox input+h2 ~ label>.icon+.text{
+            margin-left:5px;
+        }
+        #testbox input:checked+h2{
+            color: #c2f4db;
+        }
+        #textbox input:checked+h2+label>.icon+.text{
+            color:#c2f4db;
+        }
+        
+        #testbox input:checked+h2~label>span:nth-child(2)> a:hover{
+            color:#f4c2f0;
+        }
+        #testbox input:checked+h2~label>span.icon{
+            border-color: transparent;
+            background:#ff1616;
+            animation:jelly 0.6s ease;
+        }
+        #testbox input:checked+h2 ~ label>.icon::after{
+            opacity:1;
+            transform: rotate(45deg) scale(1);
+        }
+        #testbox:hover::after{
+            width:30px;
+        }
+        footer.links{
+
+            margin-top:40px;
+            margin-bottom:40px;
+            align-items: center;
+        }
+        div.links-icon{
+            width: 20%;
+            float:left;
+        }
+        img{
+            width:30px;
+            height:30px;
+            padding:0;
+            border:2px solid #ccc;
+            border-radius:100%;
+        }
+        p.links-explain{
+            margin:0;
+            text-align:left;
+            font-family: 'Noto Sans KR', 'sans-serif';
+            font-weight:400;
+            font-size:15px;
+            font-style:normal;
+            color:#595959;
+            letter-spacing: -0.3px;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <input type="checkbox" id="menubar">
+    <label for="menubar" class="menulabel">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <div class="sidebar">
+        <input type="checkbox" id="title">
+        <label for="title" class="titlelabel">
+            <h1><a href="#" title="위의 회색박스클릭해서 블로그대표메뉴보기">BLOG</a></h1><span class="icon"></span>
+        </label>
+
+        <input type="checkbox" id="category1">
+        <label for="category1" class="categorylabel">
+            <h3><a href="#">JAVA<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>C(23)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>2차원구조체포인터배열구조(3)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>Do it!C언어 입문(20)</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="category2">
+        <label for="category2" class="categorylabel">
+            <h3><a href="#">C++(17)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <input type="checkbox" id="category3">
+        <label for="category3" class="categorylabel">
+            <h3><a href="#">Node js(26)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <input type="checkbox" id="category4">
+        <label for="category4" class="categorylabel">
+            <h3><a href="#">heroku웹서버배포(1)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>라즈베리파이(11)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>아두이노라즈베리파이(4)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>Mobaxterm(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>해결한문제(3)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>해결하지못한문제(3)</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>알고보니연구소(7)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>라즈베리파이모듈실험 SW에러실험</h2>
+        </label>
+
+        <input type="checkbox" id="category5">
+        <label for="category5" class="categorylabel">
+            <h3><a href="#">도커도커컴포즈(13)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>컴퓨터망프로그래밍(10)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>윤성우의열혈TCP/IP통신(10)</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>MQTT(MOSQUITTO)(2)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>aws ec2(2)</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>대규모병렬컴퓨팅(24)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>대규모병렬컴퓨팅이론(9)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>CUDA로하는 C/C++(12)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>기본서정리(3)</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>데이터과학기초(28)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>머신러닝딥러닝(4)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>기계학습 이론(4)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>Orange로해보는데이터과학(6)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>R로해보는데이터과학(4)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>엑셀통계학(3)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>인공지능이론(2)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>R R studioRtools(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>PowerBI(3)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>Numpy(1)</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>물리(61)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>전산물리(17)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>양자역학2와 1(39)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>전자기학1(4)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>광학(1)</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="category6">
+        <label for="category6" class="categorylabel">
+            <h3><a href="#">웹크롤링(4)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>데이터베이스(3)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>MongoDB활용프로젝트(2)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>MariaDB(1)</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>환경구축(21)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>anaconda와 파이참(3)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>라즈베리파이(4)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>안드로이드스튜디오(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>JDK및최신안드로이드스튜디오(2)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>JavaEE이클립스(2)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>aws/EC2인스턴스(4)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>가상머신(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>도커(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>CUDA(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>Orange(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>SQLite(1)</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>클라우드컴퓨팅(29)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>이론(22)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>클라우드자격증(3)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>취업이력쌓기(2)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>aws(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>apache(1)</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="category7">
+        <label for="category7" class="categorylabel">
+            <h3><a href="#">운영체제(6)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <input type="checkbox" id="category8">
+        <label for="category8" class="categorylabel">
+            <h3><a href="#">컴퓨터의이해(1)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <input type="checkbox" id="category9">
+        <label for="category9" class="categorylabel">
+            <h3><a href="#">1일1김성엽-C/C++(11)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>주제별코드발전기록(2)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>가위바위보게임(2)</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="category10">
+        <label for="category10" class="categorylabel">
+            <h3><a href="#">Git과 오픈소스(5)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>자료구조와 알고리즘기초(17)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>자료구조와 알고리즘기초(10)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>C/C++(3)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>알고리즘내용정리(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>알고리즘코드정리(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>코딩테스트칠수있길(2)</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>Python(8)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>교양sw문제해결(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>Pandas(2)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>Python문법(4)</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>공부이력(12)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>양자역학2포스팅 2차원구조체포인터배열포스팅 발전과정</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>IT관련주제모은글(1)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>삼성컬러프린터 RPI원격접속 CircuitPython</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="category11">
+        <label for="category11" class="categorylabel">
+            <h3><a href="#">특허지식재산권(1)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <input type="checkbox" id="category12">
+        <label for="category12" class="categorylabel">
+            <h3><a href="#">HTMLCSS(1)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>게시판(15)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>방문자수 조회수 기록 진로기록</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="category13">
+        <label for="category13" class="categorylabel">
+            <h3><a href="#">정보보안쉅들은내용정리(1)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <input type="checkbox" id="category14">
+        <label for="category14" class="categorylabel">
+            <h3><a href="#">CCPP자료구조이전글점검필요글(6)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <input type="checkbox" id="category15">
+        <label for="category15" class="categorylabel">
+            <h3><a href="#">하드웨어관련글(1)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>개인및팀프로젝트리뷰(1)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>웹중간깃헙웹호스팅(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>모바일앱1_지도api서버담당(0)</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>팀프로젝트(3)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>스마트시티구현 팀원 공유자료</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="title2">
+        <label for="title2" class="titlelabel">
+            <h1><a href="#" title="스크롤하여 아이콘으로 MyThread카페게시글이동하기">MyThread</a></h1><span class="icon"></span>
+        </label>
+
+        <label id="testbox"><h3>자유게시판(36)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>About</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>C CPP WindowsDesktop Nodejs</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="category16">
+        <label for="category16" class="categorylabel">
+            <h3><a href="#">프로그래밍 질문하기(3)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>김성엽님블로그 Q&A게시된 질문<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a href="https://cafe.naver.com/mythread/705" target="_blank">[질문에 대한 해답을 찾은건지 잘 모르겠습니다]2차원 char형 배열에서 배열포인터 통해 초기화나 시작주소,원소접근시 간접참조연산자와 배열포인터 사용법</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a href="https://blog.naver.com/tipsware/222256489228" target="_blank">[Q&A]배열의 주소에 대하여</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a href="https://blog.naver.com/raspmldlgycchang8753/222257546254" target="_blank">Do it! C언어 입문의 저자 김성엽님 블로그글 [Q&A]배열의 주소에 대하여 질문과 답변 정리(제가 질문했어용ㅎ영광입니다정말로ㅎ)_질문 편(답변 편은 공부하고 올릴께요)</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="title3">
+        <label for="title3" class="titlelabel">
+            <h1><a href="#" title="스크롤하여 아이콘으로 CODY카페게시글이동하기">CODY</a></h1><span class="icon"></span>
+        </label>
+
+        <input type="checkbox" id="category17">
+        <label for="category17" class="categorylabel">
+            <h3><a href="#">C언어(4)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <input type="checkbox" id="category18">
+        <label for="category18" class="categorylabel">
+            <h3><a href="#">자료구조(1)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <input type="checkbox" id="category19">
+        <label for="category19" class="categorylabel">
+            <h3><a href="#">환경구축(3)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>자유게시판(1)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>반응형 웹사이트 제작</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="category20">
+        <label for="category20" class="categorylabel">
+            <h3><a href="#">JAVA(1)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>일상브이로그(1)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>프로그래밍만으로 구현한 맛집브이로그</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="category21">
+        <label for="category21" class="categorylabel">
+            <h3><a href="#">포인터동적할당메모리(1)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>네트워크프로그래밍(1)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>소켓프로그래밍(1)</a></span>
+            </label>
+        </label>
+
+        <label id="testbox"><h3>웹 애플리케이션 제작(2)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>웹 애플리케이션 제작(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>웹언어(1)</a></span>
+            </label>
+        </label>
+
+        <input type="checkbox" id="category22">
+        <label for="category22" class="categorylabel">
+            <h3><a href="#">병렬프로그래밍(1)<span style="font-size:1px;">오른쪽클릭</span></a></h3><em></em>
+            <span class="arrowicon"></span>
+        </label>
+
+        <label id="testbox"><h3>리눅스/운영체제(2)<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>도커(2)</a></span>
+            </label>
+        </label>
+
+        <br/>
+        <input type="checkbox" id="title4">
+        <label for="title4" class="titlelabel">
+            <h1><a href="#" title="스크롤하여 아이콘으로 유튜브영상이동하기">Youtube</a></h1><span class="icon"></span>
+        </label>
+
+        <label id="testbox"><h3>유튜브영상<span style="font-size:1px;color: #5f5f5f;"> 여기클릭</span></h3>
+            <span class="arrowicon"></span>
+            <input type="checkbox">
+            <h2>subCategory</h2>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>포인터동적할당메모리(1)</a></span>
+            </label>
+            <br/>
+            <label id="subtestbox">
+                <span class="icon"></span>
+                <span class="text"><a>소켓프로그래밍(1)</a></span>
+            </label>
+        </label>
+
+        <footer class="links">
+            <div class="links-icon">
+                <a href="https://gychangcp.blogspot.com/" target="_blank"><img src="../public/img/blogger.png"></a>
+                <p class="links-explain">구글블로그</p>
+            </div>
+            
+            <div class="links-icon">
+                <a href="https://blog.naver.com/raspmldlgycchang8753" target="_blank"><img src="../public/img/blog1.png"></a>
+                <p class="links-explain">네이버블로그</p>
+                
+            </div>
+            <div class="links-icon">
+                <a href="https://cafe.naver.com/mythread/517" target="_blank"><img src="../public/img/cafe1.png"></a>
+                <p class="links-explain">mythread카페</p>
+                
+            </div>
+            <div class="links-icon">
+                <a href="https://youtu.be/-ACcX0-ylHU" target="_blank"><img src="../public/img/youtube.png"></a>
+                <p class="links-explain">youtube</p>
+                
+            </div>
+            <div class="links-icon">
+                <a href="https://cafe.naver.com/codingdiycody" target="_blank"><img src="../public/img/cody.jpg"></a>
+                <p class="links-explain">CODY카페</p>
+                
+            </div>
+            
+                
+                
+        </footer>
+    </div>
+
+    <div class="circle"></div>
+
+    <div class="wrapper mb-1">
+        <div class="float wrapper type1">
+            <ul>
+                <li class="traffic red"></li>
+                <li class="traffic yellow"></li>
+                <li class="traffic green"></li>
+            </ul>
+            <p/>
+            <hr width="100%" color="#8C8C8C" size="3">
+
+            <h1 class="korean-comment">알고보니연구소장 GYCCHANG의<br/>포트폴리오</h1>
+            <p class="english-comment">since 2020.05.08
+            </p>
+        </div>
+        <div class="float type2"></div>
+        <div class="float type3"></div>
+    </div>
+    <p class="rect"></p>
+</body>
